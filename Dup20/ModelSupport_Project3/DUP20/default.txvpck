@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="vqcqi9tszqe_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::7t0b3njrvuk_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,109,151" />
+      <reference referencedUin="delphi:e_class:src:Project3:DUP20.Controller.TController" />
+      <reference referencedUin="delphi:e_class:src:Project3:DUP20.Controller.@unitclass" />
+    </reference>
+    <reference referencedUin="design:view:::ary7faxqrgf_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="138,1,100,119" />
+      <reference referencedUin="design:view:::g6faima9f0o_v" />
+    </reference>
+    <reference referencedUin="design:view:::q2yicq86x4i_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="138,139,100,134" />
+      <reference referencedUin="design:view:::upogkm5df4n_v" />
+      <reference referencedUin="design:view:::3ruhij3mx9g_v" />
+    </reference>
+  </view>
+</nodeSet>

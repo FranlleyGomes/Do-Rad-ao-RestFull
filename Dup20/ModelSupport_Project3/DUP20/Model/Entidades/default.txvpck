@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="3ruhij3mx9g_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="design:view:::tkmdmwrltoq_v">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,156,151" />
+      <reference referencedUin="delphi:e_class:src:Project3:DUP20.Model.Entidades.Produto.TModelEntidadeProduto" />
+      <reference referencedUin="delphi:e_class:src:Project3:DUP20.Model.Entidades.Produto.@unitclass" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project3:DUP20.Model.Entidades.TModelEntidades">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="185,1,206,84" />
+      <reference referencedUin="delphi:e_method:src:Project3:DUP20.Model.Entidades.TModelEntidades.Produto()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project3:DUP20.Model.Entidades.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project3:DUP20.Model.Entidades.TSingleton">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="260,240,156,116" />
+      <property name="location_set_by_user" value="True" />
+      <reference referencedUin="delphi:e_method:src:Project3:DUP20.Model.Entidades.TSingleton.Create()">
+        <property name="bounds" value="357,250,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_field:src:Project3:DUP20.Model.Entidades.TSingleton.FInstance">
+        <property name="bounds" value="357,250,0,0" />
+      </reference>
+      <reference referencedUin="delphi:e_method:src:Project3:DUP20.Model.Entidades.TSingleton.GetInstance()">
+        <property name="bounds" value="357,250,0,0" />
+      </reference>
+      <reference referencedUin="delphi:l_ast:src:Project3:DUP20.Model.Entidades.TSingleton.FInstance">
+        <property name="sourceAnchor" value="416,348" />
+        <property name="targetAnchor" value="408,356" />
+        <property name="bendpoints" value="449,348,449,389,408,389" />
+        <property name="bounds_setted_by_user" value="True" />
+      </reference>
+    </reference>
+    <reference referencedUin="design:node:::0g4zdqqsra61u2zws_n">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="557,250,184,79" />
+      <reference referencedUin="design:link:::8jqi33pcua6r5dlio_l:0g4zdqqsra61u2zws_n">
+        <property name="bounds" value="357,250,0,0" />
+        <property name="sourceAnchor" value="557,289" />
+        <property name="targetAnchor" value="416,289" />
+        <property name="bendpoints" value="" />
+        <reference referencedUin="label:@supplierRole:design:link:::8jqi33pcua6r5dlio_l:0g4zdqqsra61u2zws_n">
+          <property name="bounds" value="426,270,56,16" />
+        </reference>
+      </reference>
+    </reference>
+  </view>
+</nodeSet>

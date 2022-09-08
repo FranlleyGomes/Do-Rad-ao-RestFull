@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<nodeSet version="1.0">
+  <view uin="7t0b3njrvuk_v">
+    <property name="$defaultDiagram" value="true" />
+    <property name="$metaclass" value="Package Diagram" />
+    <property name="$name" value="default" />
+    <reference referencedUin="delphi:e_class:src:Project3:DUP20.Controller.TController">
+      <property name="$shortcutReference" value="true" />
+      <property name="bounds" value="10,10,209,131" />
+      <reference referencedUin="delphi:e_field:src:Project3:DUP20.Controller.TController.FModelEntidades" />
+      <reference referencedUin="delphi:e_method:src:Project3:DUP20.Controller.TController.Create()" />
+      <reference referencedUin="delphi:e_method:src:Project3:DUP20.Controller.TController.Destroy()" />
+      <reference referencedUin="delphi:e_method:src:Project3:DUP20.Controller.TController.Entidades()" />
+    </reference>
+    <reference referencedUin="delphi:e_class:src:Project3:DUP20.Controller.@unitclass">
+      <property name="$shortcutReference" value="true" />
+    </reference>
+  </view>
+</nodeSet>
