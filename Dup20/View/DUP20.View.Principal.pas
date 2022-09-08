@@ -6,9 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.ExtCtrls, Vcl.DBCtrls,
   Vcl.Grids, Vcl.DBGrids,  Vcl.StdCtrls, Vcl.Mask, DUP20.Controller,
-  DUP20.Controller.Interfaces, FireDAC.UI.Intf, FireDAC.VCLUI.Wait,
-  FireDAC.Phys.FBDef, FireDAC.Phys, FireDAC.Phys.IBBase, FireDAC.Phys.FB,
-  FireDAC.Stan.Intf, FireDAC.Comp.UI;
+  DUP20.Controller.Interfaces;
 
 type
   TForm2 = class(TForm)
@@ -16,8 +14,6 @@ type
     DBNavigator1: TDBNavigator;
     DataSource1: TDataSource;
     Button1: TButton;
-    FDGUIxWaitCursor1: TFDGUIxWaitCursor;
-    FDPhysFBDriverLink1: TFDPhysFBDriverLink;
     procedure FormCreate(Sender: TObject);
     procedure Button1Click(Sender: TObject);
   private

@@ -48,13 +48,4 @@ object Form2: TForm2
     Left = 548
     Top = 248
   end
-  object FDGUIxWaitCursor1: TFDGUIxWaitCursor
-    Provider = 'Forms'
-    Left = 256
-    Top = 48
-  end
-  object FDPhysFBDriverLink1: TFDPhysFBDriverLink
-    Left = 368
-    Top = 40
-  end
 end
