@@ -12,7 +12,8 @@ uses
   DUP20.Model.Entidades.Interfaces in 'Model\Entidades\DUP20.Model.Entidades.Interfaces.pas',
   DUP20.Model.Entidades.Produto in 'Model\Entidades\DUP20.Model.Entidades.Produto.pas',
   DUP20.Controller.Interfaces in 'Controller\DUP20.Controller.Interfaces.pas',
-  DUp20.Model.RestDW.Conexao in 'Model\Conexao\DUp20.Model.RestDW.Conexao.pas';
+  DUp20.Model.RestDW.Conexao in 'Model\Conexao\DUp20.Model.RestDW.Conexao.pas',
+  DUp20.Model.RestDW.Query in 'Model\Conexao\DUp20.Model.RestDW.Query.pas';
 
 {$R *.res}
 

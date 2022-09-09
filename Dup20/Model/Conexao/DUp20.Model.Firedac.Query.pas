@@ -20,6 +20,7 @@ Type
     class function New(aValue: IModelConexao): iModelQuery;
     function Query: TObject;
     function OpenTable(aTable: String): iModelQuery;
+    function ExecSQL(aSQL : String): iModelQuery;
   end;
 
 implementation
@@ -44,6 +45,12 @@ begin
 end;
 
 
+function TModelFiredacQuery.ExecSQL(aSQL: String): iModelQuery;
+begin
+  Result := Self;
+  FQuery.ExecSQL(aSQL);
+end;
+
 class function TModelFiredacQuery.New(aValue: IModelConexao)
   : iModelQuery;
 begin
@@ -55,7 +62,6 @@ begin
   Result := Self;
   FQuery.Open('SELECT * FROM ' + aTable);
 
-  ShowMessage(FQuery.Fields[0].ToString);
 end;
 
 function TModelFiredacQuery.Query: TObject;

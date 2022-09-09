@@ -19,7 +19,7 @@ Type
     constructor Create;
     destructor Destroy; override;
     class function New: iModelConexao;
-    function Connection: TCustomConnection;
+    function Connection: TObject;
   end;
 
 implementation
@@ -29,9 +29,9 @@ uses
 
 { TModelConexaoFiredacConexao }
 
-function TModelFiredacConexao.Connection: TCustomConnection;
+function TModelFiredacConexao.Connection : TObject;
 begin
-  Result := FConexao;
+  Result := TCustomConnection(FConexao);
 end;
 
 constructor TModelFiredacConexao.Create;

@@ -112,6 +112,7 @@
         <DCCReference Include="Model\Entidades\DUP20.Model.Entidades.Produto.pas"/>
         <DCCReference Include="Controller\DUP20.Controller.Interfaces.pas"/>
         <DCCReference Include="Model\Conexao\DUp20.Model.RestDW.Conexao.pas"/>
+        <DCCReference Include="Model\Conexao\DUp20.Model.RestDW.Query.pas"/>
         <None Include="ModelSupport_Project3\default.txaPackage"/>
         <None Include="ModelSupport_Project3\default.txvpck"/>
         <None Include="ModelSupport_Project3\DUP20\default.txvpck"/>

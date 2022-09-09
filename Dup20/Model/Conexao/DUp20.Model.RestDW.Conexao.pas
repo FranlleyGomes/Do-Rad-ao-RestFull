@@ -3,16 +3,21 @@ unit DUp20.Model.RestDW.Conexao;
 interface
 
 uses
-  DUp20.Model.Conexao.Interfaces, uDWAbout, uRESTDWPoolerDB;
+  DUp20.Model.Conexao.Interfaces, Data.DB, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client, uDWConstsData, uRESTDWPoolerDB, uDWAbout;
 
 Type
   TModelRestDWConexao = class(TInterfacedObject, iModelConexao)
     private
     FConexao: TRESTDWDataBase;
+
     public
       constructor Create;
       destructor Destroy; override;
       class function New : iModelConexao;
+      function Connection: TObject;
   end;
 
 
@@ -23,9 +28,19 @@ uses
 
 { TModelRestDWConexao }
 
+function TModelRestDWConexao.Connection: TObject;
+begin
+  Result := TCustomConnection(FConexao);
+end;
+
 constructor TModelRestDWConexao.Create;
 begin
-   FConexao:= TRESTDWDataBase.Create;
+ FConexao:= TRESTDWDataBase.Create(Nil);
+ FConexao.PoolerName := '';
+ FConexao.PoolerPort := 8082;
+ FConexao.PoolerService := '127.0.0.1';
+ FConexao.PoolerName := 'TServerMethodDM.RESTDWPoolerFD';
+ FConexao.Active := True;
 end;
 
 destructor TModelRestDWConexao.Destroy;

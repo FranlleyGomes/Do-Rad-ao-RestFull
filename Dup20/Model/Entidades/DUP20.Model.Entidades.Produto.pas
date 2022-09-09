@@ -51,6 +51,7 @@ begin
    Result := Self;
    FQuery.OpenTable('CADCLIENTE');
 
+
 end;
 
 end.

@@ -7,8 +7,11 @@ uses
 
 Type
 
+  TTypeConnection = (tpFiredac, tpRestDW);
+
   TModelConexaoFactory = class(TInterfacedObject, iModelConexaoFactory)
   private
+  FTypeConnection : TTypeConnection;
   public
     constructor Create;
     destructor Destroy; override;
@@ -20,19 +23,24 @@ Type
 implementation
 
 uses
-  DUp20.Model.Firedac.Conexao, DUp20.Model.Firedac.Query;
+  DUp20.Model.Firedac.Conexao, DUp20.Model.Firedac.Query,
+  DUp20.Model.RestDW.Query, DUp20.Model.RestDW.Conexao;
 
 
 { TModelConexaoFactory }
 
 function TModelConexaoFactory.Conexao: iModelConexao;
 begin
-  Result := TModelFiredacConexao.New;
+ case FTypeConnection of
+   tpFiredac: Result := TModelFiredacConexao.New;
+   tpRestDW: Result := TModelRestDWConexao.New;
+ end;
+
 end;
 
 constructor TModelConexaoFactory.Create;
 begin
-
+    FTypeConnection := tpRestDW;
 end;
 
 destructor TModelConexaoFactory.Destroy;
@@ -44,7 +52,11 @@ end;
 
 function TModelConexaoFactory.Query: iModelQuery;
 begin
-  Result := TModelFiredacQuery.New(Self.Conexao);
+  case FTypeConnection of
+    tpFiredac:  Result := TModelFiredacQuery.New(Self.Conexao);
+    tpRestDW:   Result := TModelRestDWQuery.New(Self.Conexao);
+  end;
+
 end;
 
 class function TModelConexaoFactory.New: iModelConexaoFactory;
