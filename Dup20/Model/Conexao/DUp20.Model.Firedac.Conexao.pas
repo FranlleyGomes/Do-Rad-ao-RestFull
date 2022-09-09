@@ -1,4 +1,4 @@
-unit DUp20.Model.Conexao.Firedac.Conexao;
+unit DUp20.Model.Firedac.Conexao;
 
 interface
 
@@ -12,17 +12,14 @@ uses
   Firedac.Comp.UI;
 
 Type
-  TModelConexaoFiredacConexao = class(TInterfacedObject, iModelConexao)
+  TModelFiredacConexao = class(TInterfacedObject, iModelConexao)
   private
     FConexao: TFDConnection;
-    FDGUIxWaitCursor: TFDGUIxWaitCursor;
-    FDPhysFBDriverLink: TFDPhysFBDriverLink;
-
   public
     constructor Create;
     destructor Destroy; override;
     class function New: iModelConexao;
-    function Connection: TObject;
+    function Connection: TCustomConnection;
   end;
 
 implementation
@@ -32,17 +29,14 @@ uses
 
 { TModelConexaoFiredacConexao }
 
-function TModelConexaoFiredacConexao.Connection: TObject;
+function TModelFiredacConexao.Connection: TCustomConnection;
 begin
   Result := FConexao;
 end;
 
-constructor TModelConexaoFiredacConexao.Create;
+constructor TModelFiredacConexao.Create;
 begin
   FConexao := TFDConnection.Create(nil);
-
-  FDGUIxWaitCursor := TFDGUIxWaitCursor.Create(nil);
-  FDPhysFBDriverLink := TFDPhysFBDriverLink.Create(nil);
 
   FConexao.DriverName := 'FB';
   FConexao.Params.Database := 'C:\DBComercio\Empresa1\BASEDADOS.FDB';
@@ -58,15 +52,13 @@ begin
   //FConexao.Connected := True;
 end;
 
-destructor TModelConexaoFiredacConexao.Destroy;
+destructor TModelFiredacConexao.Destroy;
 begin
   FreeAndNil(FConexao);
-  FreeAndNil(FDGUIxWaitCursor);
-  FreeAndNil(FDPhysFBDriverLink);
   inherited;
 end;
 
-class function TModelConexaoFiredacConexao.New: iModelConexao;
+class function TModelFiredacConexao.New: iModelConexao;
 begin
   Result := Self.Create;
 end;

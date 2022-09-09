@@ -6,6 +6,7 @@ uses
   DUp20.Model.Conexao.Interfaces;
 
 Type
+
   TModelConexaoFactory = class(TInterfacedObject, iModelConexaoFactory)
   private
   public
@@ -19,13 +20,14 @@ Type
 implementation
 
 uses
-  DUp20.Model.Conexao.Firedac.Conexao, DUp20.Model.Conexao.Firedac.Query;
+  DUp20.Model.Firedac.Conexao, DUp20.Model.Firedac.Query;
+
 
 { TModelConexaoFactory }
 
 function TModelConexaoFactory.Conexao: iModelConexao;
 begin
-   Result := TModelConexaoFiredacConexao.New;
+  Result := TModelFiredacConexao.New;
 end;
 
 constructor TModelConexaoFactory.Create;
@@ -39,14 +41,15 @@ begin
   inherited;
 end;
 
-class function TModelConexaoFactory.New: iModelConexaoFactory;
-begin
-  Result := Self.Create;
-end;
 
 function TModelConexaoFactory.Query: iModelQuery;
 begin
-  Result := TModelConexaoFiredacQuery.New(Self.Conexao);
+  Result := TModelFiredacQuery.New(Self.Conexao);
+end;
+
+class function TModelConexaoFactory.New: iModelConexaoFactory;
+begin
+  Result := Self.Create;
 end;
 
 end.

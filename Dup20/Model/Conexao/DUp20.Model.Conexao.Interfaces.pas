@@ -2,10 +2,13 @@ unit DUp20.Model.Conexao.Interfaces;
 
 interface
 
+uses
+  Data.DB;
+
 type
   iModelConexao = interface
     ['{71724FB0-D163-4068-A60B-63082BC35EBF}']
-    function Connection: TObject;
+    function Connection: TCustomConnection;
   end;
 
   iModelQuery = interface
@@ -17,7 +20,7 @@ type
   iModelConexaoFactory = interface
     ['{D7193216-4EDD-43D1-826A-F9C2CCBC9DA0}']
     function Conexao: iModelConexao;
-    function Query: iModelQuery;
+    function Query  : iModelQuery;
   end;
 
 implementation

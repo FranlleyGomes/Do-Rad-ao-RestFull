@@ -1,4 +1,4 @@
-unit DUp20.Model.Conexao.Firedac.Query;
+unit DUp20.Model.Firedac.Query;
 
 interface
 
@@ -10,10 +10,10 @@ uses
   Firedac.Comp.DataSet, Firedac.Comp.Client;
 
 Type
-  TModelConexaoFiredacQuery = class(TInterfacedObject, iModelQuery)
+  TModelFiredacQuery = class(TInterfacedObject, iModelQuery)
   private
-    FConexao: IModelConexao;
     FQuery: TFDQuery;
+    FConexao: IModelConexao;
   public
     constructor Create(aValue: IModelConexao);
     destructor Destroy; override;
@@ -25,35 +25,32 @@ Type
 implementation
 
 uses
-  System.SysUtils, DUp20.Model.Conexao.Firedac.Conexao, Vcl.Dialogs;
+  System.SysUtils, Vcl.Dialogs;
 
 { TModelConexaoFiredacQuery }
 
-constructor TModelConexaoFiredacQuery.Create(aValue: IModelConexao);
+constructor TModelFiredacQuery.Create(aValue: IModelConexao);
 begin
   FConexao := aValue;
   FQuery := TFDQuery.Create(Nil);
 
-  if not Assigned(FConexao) then
-    FConexao := TModelConexaoFiredacConexao.New;
-
   FQuery.Connection := TFDConnection(FConexao.Connection);
 end;
 
-destructor TModelConexaoFiredacQuery.Destroy;
+destructor TModelFiredacQuery.Destroy;
 begin
   FreeAndNil(FQuery);
   inherited;
 end;
 
 
-class function TModelConexaoFiredacQuery.New(aValue: IModelConexao)
+class function TModelFiredacQuery.New(aValue: IModelConexao)
   : iModelQuery;
 begin
   Result := Self.Create(aValue);
 end;
 
-function TModelConexaoFiredacQuery.OpenTable(aTable: String): iModelQuery;
+function TModelFiredacQuery.OpenTable(aTable: String): iModelQuery;
 begin
   Result := Self;
   FQuery.Open('SELECT * FROM ' + aTable);
@@ -61,7 +58,7 @@ begin
   ShowMessage(FQuery.Fields[0].ToString);
 end;
 
-function TModelConexaoFiredacQuery.Query: TObject;
+function TModelFiredacQuery.Query: TObject;
 begin
   Result := FQuery;
 end;

@@ -3,8 +3,8 @@ unit DUP20.Controller;
 interface
 
 uses
-  DUP20.Model.Entidades.Interfaces, DUP20.Controller.Interfaces;
-
+  Dup20.Model.Entidades.Factory, DUp20.Controller.Interfaces,
+  DUp20.Model.Entidades.Interfaces;
 
 Type
   TController = class(TInterfacedObject, iController)
@@ -22,7 +22,7 @@ Type
 implementation
 
 uses
-  System.SysUtils, DUP20.Model.Entidades.Factory;
+  System.SysUtils;
 
 { TController }
 

@@ -7,18 +7,17 @@ uses
 
 Type
 
+  TModelEntidadesFactory = class(TInterfacedObject, iModelEntidadeFactory)
+  private
+    FProduto : iModelEntidade;
+  public
+    constructor Create;
+    destructor Destroy; override;
+    class function New: iModelEntidadeFactory;
+    Function Produto: iModelEntidade;
+  end;
 
-   TModelEntidadesFactory = class (TInterfacedObject, iModelEntidadeFactory)
-   private
-
-   public
-      constructor Create;
-      destructor Destroy ; override;
-      class function New : iModelEntidadeFactory;
-     Function Produto : iModelEntidade;
-   end;
-
- implementation
+implementation
 
 uses
   DUP20.Model.Entidades.Produto;
@@ -27,7 +26,11 @@ uses
 
 function TModelEntidadesFactory.Produto: iModelEntidade;
 begin
-  Result := TModelEntidadeProduto.New;
+
+  if not Assigned(FProduto) then
+    FProduto := TModelEntidadeProduto.New;
+  Result := FProduto;
+
 end;
 
 constructor TModelEntidadesFactory.Create;
@@ -43,8 +46,7 @@ end;
 
 class function TModelEntidadesFactory.New: iModelEntidadeFactory;
 begin
-   Result := Self.Create;
+  Result := Self.Create;
 end;
-
 
 end.
